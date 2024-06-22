@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Website Example</title>
+<style>
+  /* Optional: You can style the div and iframe as needed */
+  #embeddedSite {
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    overflow: auto;
+  }
+</style>
+</head>
+<body>
+<div id="embeddedSite"></div>
+<script>
+function loadWebsite() {
+  var div = document.getElementById('embeddedSite');
+  div.innerHTML = '<iframe src="https://www.highrevenuenetwork.com/q5pvjwgb9h?key=b0bb1d944480690e81537705d162ad23" style="width:100%; height:100%; border:none;"></iframe>';
+}
+loadWebsite();
+setInterval(function() {
+  loadWebsite();
+}, 30000); 
+</script>
+<hr>
+</body>
+</html>
