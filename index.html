@@ -23,10 +23,8 @@
             width: 100%; 
             height: 100%; 
             border: none; 
-            
         }
     </style>
-
     <script>
         setInterval(function() {
             location.reload();
@@ -40,13 +38,13 @@
 
     <script>
         function slowScroll() {
-            let scrollStep = 20; // Scroll by 1 pixel
+            let scrollStep = 1; // Scroll by 1 pixel
             let delay = 30; // Delay in milliseconds
 
             let scrollInterval = setInterval(() => {
-                const iframe = document.querySelector('iframe');
-                iframe.contentWindow.scrollBy(0, scrollStep); // Scroll the iframe content
-                if (iframe.contentWindow.scrollY >= iframe.contentWindow.document.body.scrollHeight - iframe.contentWindow.innerHeight) {
+                const container = document.querySelector('.iframe-container');
+                container.scrollBy(0, scrollStep); // Scroll the container
+                if (container.scrollTop >= container.scrollHeight - container.clientHeight) {
                     clearInterval(scrollInterval);
                 }
             }, delay);
