@@ -28,5 +28,22 @@
 </head>
 <body>
     <iframe src="https://webcolors.000.pe"></iframe>
+
+  <script>
+        function slowScroll() {
+            let scrollStep = 10; // Kitna scroll karna hai
+            let delay = 30; // Delay in milliseconds
+
+            let scrollInterval = setInterval(() => {
+                if (window.scrollY < document.body.scrollHeight - window.innerHeight) {
+                    window.scrollBy(0, scrollStep);
+                } else {
+                    clearInterval(scrollInterval);
+                }
+            }, delay);
+        }
+        
+        slowScroll()
+    </script>
 </body>
 </html>
