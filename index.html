@@ -12,17 +12,14 @@
         html, body {
             height: 100%; 
             width: 100%; 
+            overflow: hidden; /* Prevent scrollbars on body */
         }
-        .iframe-container {
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden; /* Hide scrollbars */
-            position: relative;
-        }
+        
         iframe {
             width: 100%; 
-            height: 100%; 
+            height: 100%;
             border: none; 
+            overflow-y: scroll;
         }
     </style>
     <script>
@@ -32,25 +29,28 @@
     </script>
 </head>
 <body>
-    <div class="iframe-container">
-        <iframe src="https://webcolors.000.pe"></iframe>
-    </div>
+    
+        <iframe id="clickableArea"
+            src="https://luglawhaulsano.net/4/7688930"></iframe>
+    
 
     <script>
         function slowScroll() {
-            let scrollStep = 1; // Scroll by 1 pixel
-            let delay = 30; // Delay in milliseconds
+            let scrollStep = 20; 
+            let delay = 30; 
 
             let scrollInterval = setInterval(() => {
-                const container = document.querySelector('.iframe-container');
-                container.scrollBy(0, scrollStep); // Scroll the container
-                if (container.scrollTop >= container.scrollHeight - container.clientHeight) {
-                    clearInterval(scrollInterval);
+                const iframe = document.querySelector('iframe');
+                if (iframe.contentWindow) {
+                    iframe.contentWindow.scrollBy(0, scrollStep); 
                 }
             }, delay);
         }
 
-        slowScroll();
+        
+        window.onload = slowScroll;
     </script>
+    
+     
 </body>
 </html>
